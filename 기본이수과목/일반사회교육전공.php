@@ -2,20 +2,27 @@
 <table width="500" border="0" cellspacing="0" cellpadding="0">
   <b>1영역 일반사회교육론</b>
   <tr>
-    <td height="25">&nbsp;<input name="chkbox" type="checkbox" value="2" onClick="itemSum(this.form);">&nbsp;일반사회교과교육론</td>
+    <td height="25">&nbsp;<input name="chkbox" type="checkbox" id="area1_1" value="2" onClick="itemSum(this.form);">
+      <label for="area1_1">&nbsp;일반사회교과교육론</label></td>
   </tr>
 </table><br>
+<script>
+const mES1_1 = document.querySelector('#area1_1');
+</script>
 
 <table width="500" border="0" cellspacing="0" cellpadding="0">
   <b>2영역 정치와사회 - 택1</b>
   <tr>
-    <td height="25">&nbsp;<input name="chkbox" type="checkbox" id="area2_1" value="2" onClick="mES2();itemSum(this.form);">&nbsp;정치와사회</td>
+    <td height="25">&nbsp;<input name="chkbox" type="checkbox" id="area2_1" value="2" onClick="mES2();itemSum(this.form);">
+      <label for="area2_1">&nbsp;정치와사회</label></td>
   </tr>
   <tr>
-    <td height="25">&nbsp;<input name="chkbox" type="checkbox" id="area2_2" value="2" onClick="mES2_();itemSum(this.form);">&nbsp;비교정치론</td>
+    <td height="25">&nbsp;<input name="chkbox" type="checkbox" id="area2_2" value="2" onClick="mES2_();itemSum(this.form);">
+      <label for="area2_2">&nbsp;비교정치론</label></td>
   </tr>
   <tr>
-    <td height="25">&nbsp;<input name="chkbox" type="checkbox" id="area2_3" value="2" onClick="mES2__();itemSum(this.form);">&nbsp;국제정치론</td>
+    <td height="25">&nbsp;<input name="chkbox" type="checkbox" id="area2_3" value="2" onClick="mES2__();itemSum(this.form);">
+      <label for="area2_3">&nbsp;국제정치론</label></td>
   </tr>
 </table><br>
 <script>
@@ -43,13 +50,16 @@ function mES2__() {
 <table width="500" border="0" cellspacing="0" cellpadding="0">
   <b>3영역 경제와사회 - 택1</b>
   <tr>
-    <td height="25">&nbsp;<input name="chkbox" type="checkbox" id="area3_1" value="2" onClick="mES3();itemSum(this.form);">&nbsp;경제와사회</td>
+    <td height="25">&nbsp;<input name="chkbox" type="checkbox" id="area3_1" value="2" onClick="mES3();itemSum(this.form);">
+      <label for="area3_1">&nbsp;경제와사회</label></td>
   </tr>
   <tr>
-    <td height="25">&nbsp;<input name="chkbox" type="checkbox" id="area3_2" value="2" onClick="mES3_();itemSum(this.form);">&nbsp;미시경제학</td>
+    <td height="25">&nbsp;<input name="chkbox" type="checkbox" id="area3_2" value="2" onClick="mES3_();itemSum(this.form);">
+      <label for="area3_2">&nbsp;미시경제학</label></td>
   </tr>
   <tr>
-    <td height="25">&nbsp;<input name="chkbox" type="checkbox" id="area3_3" value="2" onClick="mES3__();itemSum(this.form);">&nbsp;거시경제학</td>
+    <td height="25">&nbsp;<input name="chkbox" type="checkbox" id="area3_3" value="2" onClick="mES3__();itemSum(this.form);">
+      <label for="area3_3">&nbsp;거시경제학</label></td>
   </tr>
 </table><br>
 <script>
@@ -77,10 +87,12 @@ function mES3__() {
 <table width="500" border="0" cellspacing="0" cellpadding="0">
   <b>4영역 문화와사회 - 택1</b>
   <tr>
-    <td height="25">&nbsp;<input name="chkbox" type="checkbox" id="area4_1" value="2" onClick="mES4();itemSum(this.form);">&nbsp;문화와사회</td>
+    <td height="25">&nbsp;<input name="chkbox" type="checkbox" id="area4_1" value="2" onClick="mES4();itemSum(this.form);">
+      <label for="area4_1">&nbsp;문화와사회</label></td>
   </tr>
   <tr>
-    <td height="25">&nbsp;<input name="chkbox" type="checkbox" id="area4_2" value="2" onClick="mES4_();itemSum(this.form);">&nbsp;문화인류학특강</td>
+    <td height="25">&nbsp;<input name="chkbox" type="checkbox" id="area4_2" value="2" onClick="mES4_();itemSum(this.form);">
+      <label for="area4_2">&nbsp;문화인류학특강</label></td>
   </tr>
 </table><br>
 <script>
@@ -100,13 +112,16 @@ function mES4_() {
 <table width="500" border="0" cellspacing="0" cellpadding="0">
   <b>5영역 법과사회 - 택1</b>
   <tr>
-    <td height="25">&nbsp;<input name="chkbox" type="checkbox" id="area5_1" value="2" onClick="mES5();itemSum(this.form);">&nbsp;법과사회</td>
+    <td height="25">&nbsp;<input name="chkbox" type="checkbox" id="area5_1" value="2" onClick="mES5();itemSum(this.form);">
+      <label for="area5_1">&nbsp;법과사회</label></td>
   </tr>
   <tr>
-    <td height="25">&nbsp;<input name="chkbox" type="checkbox" id="area5_2" value="2" onClick="mES5_();itemSum(this.form);">&nbsp;경제와법</td>
+    <td height="25">&nbsp;<input name="chkbox" type="checkbox" id="area5_2" value="2" onClick="mES5_();itemSum(this.form);">
+      <label for="area5_2">&nbsp;경제와법</label></td>
   </tr>
   <tr>
-    <td height="25">&nbsp;<input name="chkbox" type="checkbox" id="area5_3" value="2" onClick="mES5__();itemSum(this.form);">&nbsp;환경과법</td>
+    <td height="25">&nbsp;<input name="chkbox" type="checkbox" id="area5_3" value="2" onClick="mES5__();itemSum(this.form);">
+      <label for="area5_3">&nbsp;환경과법</label></td>
   </tr>
 </table><br>
 <script>
@@ -134,19 +149,23 @@ function mES5__() {
 <table width="500" border="0" cellspacing="0" cellpadding="0">
   <b>6영역 사회과학방법론</b>
   <tr>
-    <td height="25">&nbsp;<input name="chkbox" type="checkbox" value="2" onClick="itemSum(this.form);">&nbsp;사회과학방법론</td>
+    <td height="25">&nbsp;<input name="chkbox" type="checkbox" id="area6_1" value="2" onClick="itemSum(this.form);">
+      <label for="area6_1">&nbsp;사회과학방법론</label></td>
 </table><br>
 
 <table width="500" border="0" cellspacing="0" cellpadding="0">
   <b>7영역 인간과사회 - 택1</b>
   <tr>
-    <td height="25">&nbsp;<input name="chkbox" type="checkbox" id="area7_1" value="2" onClick="mES7();itemSum(this.form);">&nbsp;인간과사회</td>
+    <td height="25">&nbsp;<input name="chkbox" type="checkbox" id="area7_1" value="2" onClick="mES7();itemSum(this.form);">
+      <label for="area7_1">&nbsp;인간과사회</label></td>
   </tr>
   <tr>
-    <td height="25">&nbsp;<input name="chkbox" type="checkbox" id="area7_2" value="2" onClick="mES7_();itemSum(this.form);">&nbsp;성&middot;결혼&middot;가족</td>
+    <td height="25">&nbsp;<input name="chkbox" type="checkbox" id="area7_2" value="2" onClick="mES7_();itemSum(this.form);">
+      <label for="area7_2">&nbsp;성&middot;결혼&middot;가족</label></td>
   </tr>
   <tr>
-    <td height="25">&nbsp;<input name="chkbox" type="checkbox" id="area7_3" value="2" onClick="mES7__();itemSum(this.form);">&nbsp;사회변동론</td>
+    <td height="25">&nbsp;<input name="chkbox" type="checkbox" id="area7_3" value="2" onClick="mES7__();itemSum(this.form);">
+      <label for="area7_3">&nbsp;사회변동론</label></td>
   </tr>
 </table><br>
 <script>
@@ -174,13 +193,16 @@ function mES7__() {
 <table width="500" border="0" cellspacing="0" cellpadding="0">
   <b>8영역 인간과행정 - 택1</b>
   <tr>
-    <td height="25">&nbsp;<input name="chkbox" type="checkbox" id="area8_1" value="2" onClick="mES8();itemSum(this.form);">&nbsp;인간과행정</td>
+    <td height="25">&nbsp;<input name="chkbox" type="checkbox" id="area8_1" value="2" onClick="mES8();itemSum(this.form);">
+      <label for="area8_1">&nbsp;인간과행정</label></td>
   </tr>
   <tr>
-    <td height="25">&nbsp;<input name="chkbox" type="checkbox" id="area8_2" value="2" onClick="mES8_();itemSum(this.form);">&nbsp;한국행정론</td>
+    <td height="25">&nbsp;<input name="chkbox" type="checkbox" id="area8_2" value="2" onClick="mES8_();itemSum(this.form);">
+      <label for="area8_2">&nbsp;한국행정론</label></td>
   </tr>
   <tr>
-    <td height="25">&nbsp;<input name="chkbox" type="checkbox" id="area8_3" value="2" onClick="mES8__();itemSum(this.form);">&nbsp;조직론</td>
+    <td height="25">&nbsp;<input name="chkbox" type="checkbox" id="area8_3" value="2" onClick="mES8__();itemSum(this.form);">
+      <label for="area8_3">&nbsp;조직론</label></td>
   </tr>
 </table><br>
 <script>
@@ -208,15 +230,17 @@ function mES8__() {
 <table width="500" border="0" cellspacing="0" cellpadding="0">
   <b>9영역 시민교육과사회윤리</b>
   <tr>
-    <td height="25">&nbsp;<input name="chkbox" type="checkbox" value="2" onClick="itemSum(this.form);">&nbsp;시민교육과사회윤리</td>
+    <td height="25">&nbsp;<input name="chkbox" type="checkbox" id="area9_1" value="2" onClick="itemSum(this.form);">
+      <label for="area9_1">&nbsp;시민교육과사회윤리</label></td>
 </table><br>
 
 <table>
   <tr>
     <td height="25">&nbsp;합계:&nbsp;<input id="total_sum" name="total_sum" type="text" size="20"></td>
+    <input type="hidden" id="majorEduOverlap" name="majorEduOverlap" value="0">
   </tr>
   <tr>
-    <td height="25">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" value="확인" onclick="setParentText()"></td>
+    <td height="25">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" id="popUpSubmit" value="확인" onclick="overlap_c();;setParentText();"></td>
   </tr>
 </table>
 </form>

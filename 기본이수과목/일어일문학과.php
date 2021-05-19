@@ -5,6 +5,9 @@
     <td height="25">&nbsp;<input name="chkbox" type="checkbox" value="3" onClick="itemSum(this.form);">&nbsp;[JAPN451]일본어교과교육론 - 3학점</td>
   </tr>
 </table><br>
+<script>
+const mES1_1 = document.querySelector('#area1_1');
+</script>
 
 <table width="500" border="0" cellspacing="0" cellpadding="0">
   <b>2영역 일본어학개론</b>
@@ -263,9 +266,10 @@ function mES8__() {
 <table>
   <tr>
     <td height="25">&nbsp;합계:&nbsp;<input id="total_sum" name="total_sum" type="text" size="20"></td>
+    <input type="hidden" id="majorEduOverlap" name="majorEduOverlap" value="0">
   </tr>
   <tr>
-    <td height="25">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" value="확인" onclick="setParentText()"></td>
+    <td height="25">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" id="popUpSubmit" value="확인" onclick="overlap_c();setParentText();"></td>
   </tr>
 </table>
 </form>

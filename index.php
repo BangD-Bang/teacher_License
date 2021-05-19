@@ -3,109 +3,38 @@ require_once('lib/print.php');
 require_once('view/top.php');
  ?>
 
-
     <?php
-      if(isset($_GET['institution']) and isset($_GET['entryYear'])) { ?>
-        <br><br>
-        <b><font color="blue" size="4px">
-          아래 각 요건의 취득내역을 기입해주세요.</font><font  color="blue" size="3.5 px"> (직접입력 또는 우측 "과목별로 보기" 사용)</font></b><br><br>
+      if(isset($_GET['institution']) and isset($_GET['entryYear'])) {?>
+        <?php require_once('lib/parameterProtection.php'); ?>
 
+        <b><font color="blue" size="4px"><br>
+          &squ; 아래 각 요건의 취득내역을 기입해주세요.</font><br>
+          <font color="red" size="3px" style="margin-left:0px;">&#42; 정확한 결과를 위해 "과목별로 보기" 사용</font></b><br>
 
-  <?php echo "<h3>소속기관 = ".$_GET['institution']."</h3>";
-        //if($_GET['institution'] == "사범대학") {
-        //  echo "<h3>소속학과 = ".$_GET['department1']."<h3>";
-        //  $department = $_GET['department1'];
-        //} else
-        if($_GET['institution'] == "일반대학 교직과정") {
-          echo "<h3>소속학과 = ".$_GET['department2']."<h3>";
-          $department = $_GET['department2'];
-          if($department == "null") {
-            header('Location: /교원자격증/index.php');
-          }
-        } else if ($_GET['institution'] == "교육대학원") {
-          echo "<h3>소속학과 = ".$_GET['department3']."<h3>";
-          $department = $_GET['department3'];
-          if($department == "null") {
-            header('Location: /교원자격증/index.php');
-          }
+     <!-- 입력페이지 자바스크립트 -->
+    <?php require_once('lib/popup.php'); ?>
+
+    <script type="text/javascript">
+      function resultConfirm() {
+        if(confirm("입력한 내용으로 결과를 확인합니다.")) {
+          document.resultForm.submit();
+        } else {
+          return;
         }
-        echo "<h3>입학년도 = ".$_GET['entryYear']."</h3>";
-     ?>
-
-    <script>
-    var open_major_basic;
-    function openMajorBasic() {
-      window.name = "교원자격 자가점검";
-      open_major_basic = window.open("기본이수과목.php"+"?department=<?php echo $department; ?>","기본이수과목 과목별로 보기","width=570, height=400, resizable=no");
-    }
-    var open_major_edu332;
-    function openMajorEdu332() {
-      window.name = "교원자격 자가점검";
-      open_major_edu332 = window.open("교과교육영역332.php","교과교육영역 과목별로 보기","width=570, height=400, resizable=no");
-    }
-    var open_major_edu323;
-    function openMajorEdu323() {
-      window.name = "교원자격 자가점검";
-      open_major_edu323 = window.open("교과교육영역323.php","교과교육영역 과목별로 보기","width=570, height=400, resizable=no");
-    }
-    var open_major_edu333;
-    function openMajorEdu333() {
-      window.name = "교원자격 자가점검";
-      open_major_edu333 = window.open("교과교육영역333.php","교과교육영역 과목별로 보기","width=570, height=400, resizable=no");
-    }
-    var open_major_edu222;
-    function openMajorEdu222() {
-      window.name = "교원자격 자가점검";
-      open_major_edu222 = window.open("교과교육영역222.php","교과교육영역 과목별로 보기","width=570, height=400, resizable=no");
-    }
-    var open_major_edu_none;
-    function openMajorEduNone() {
-      window.name = "교원자격 자가점검";
-      open_major_edu_none = window.open("교과교육영역(해당없음).php","교과교육영역 과목별로 보기","width=570, height=400, resizable=no");
-    }
-    var open_edu_theory;
-    function openEduTheory() {
-      window.name = "교원자격 자가점검";
-      open_edu_theory = window.open("교직이론.php","교직이론 과목별로 보기","width=570, height=400, resizable=no");
-    }
-    var open_edu_theory0912;
-    function openEduTheory0912() {
-      window.name = "교원자격 자가점검";
-      open_edu_theory0912 = window.open("교직이론0912.php","교직이론 과목별로 보기","width=570, height=400, resizable=no");
-    }
-
-    var open_edu_refine;
-    function openEduRefine() {
-      window.name = "교원자격 자가점검";
-      open_edu_refine = window.open("교직소양.php","교직소양 과목별로 보기","width=570, height=400, resizable=no");
-    }
-    var open_edu_refine0912;
-    function openEduRefine0912() {
-      window.name = "교원자격 자가점검";
-      open_edu_refine0912 = window.open("교직소양0912.php","교직소양 과목별로 보기","width=570, height=400, resizable=no");
-    }
-    var open_edu_practice;
-    function openEduPractice() {
-      window.name = "교원자격 자가점검";
-      open_edu_practice = window.open("교육실습.php","교육실습 과목별로 보기","width=570, height=400, resizable=no");
-    }
-
-    function departmentAlert() {
-      alert('올바른 학과가 아닙니다.');
-    }
+      }
     </script>
+    <input type="hidden" id="majorEduCheck" name="majorEduCheck" value="0">
 
-
-
-    <form action="result.php">
+    <form action="result.php" name="resultForm" style="margin-left: 20px;">
       <input type="hidden" name="institutionCheck" value="<?php echo $_GET['institution']; ?>">
       <input type="hidden" name="departmentCheck" value="<?php echo $department; ?>">
       <input type="hidden" name="entryYearCheck" value="<?php echo $_GET['entryYear']; ?>">
-      <input type="hidden" id="area_check" name="area_check" value="(영역조건 이수여부 확인불가)<br>">
+      <input type="hidden" id="area_check" name="area_check" value="이수여부 확인불가">
+      <input type="hidden" id="volunteerCheck" name="volunteerCheck" value="<font color='red'><b>이수여부 확인불가</b></font>('과목별로 보기' 사용)">
       <p>
-        기본이수과목
-        <input type="number" min="0" id="majorBasic" name="majorBasic" placeholder="기본이수과목">학점
-        <input type="button" value="<?php echo $department; ?>&nbsp;기본이수과목 과목별로 보기" onclick="
+        &#9657;	기본이수과목
+        <input type="number" min="0" id="majorBasic" name="majorBasic" value=0 placeholder="기본이수과목">학점
+        <input type="button" value="과목별로 보기" onclick="
         <?php
         $filename = './기본이수과목/'.$department.'.php';
         if(file_exists($filename)) { ?>
@@ -114,15 +43,13 @@ require_once('view/top.php');
         departmentAlert()
       <?php } ?>
         ">
-        <br>
-        <b><font color="blue" size="3.3px">&#42; 기본이수과목은 정확한 결과를 위해 "과목별로 보기" 사용</font></b>
       </p>
       <?php if($department == "심리학과(심리학부)" or $department == "간호학과") { ?>
 
       <?php } else { ?>
       <p>
-        교과교육영역
-        <input type="number" min="0" id="majorEdu" name="majorEdu" placeholder="교과교육영역">학점
+        &#9657;	교과교육영역
+        <input type="number" min="0" id="majorEdu" name="majorEdu" value=0 placeholder="교과교육영역">학점
         <input type="button" value="과목별로 보기" onclick=
         <?php if ($department == "국어국문학과" or $department == "노어노문학과" or $department == "영어영문학과" or $department == "중어중문학과" or $department == "철학과" or $department == "한문학과") { ?>
           "openMajorEdu332()"
@@ -138,9 +65,10 @@ require_once('view/top.php');
         >
       </p>
       <?php } ?>
+
       <p>
-        교직이론
-        <input type="number" min="0" id="eduTheory" name="eduTheory" placeholder="교직이론">학점
+        &#9657;	교직이론
+        <input type="number" min="0" id="eduTheory" name="eduTheory" value=0 placeholder="교직이론">학점
         <input type="button" value="과목별로 보기" onclick=
         <?php if ($_GET['entryYear'] == "2009~2012년") { ?>
         "openEduTheory0912()"
@@ -150,8 +78,8 @@ require_once('view/top.php');
         >
       </p>
       <p>
-        교직소양
-        <input type="number" min="0" id="eduRefine" name="eduRefine" placeholder="교직소양">학점
+        &#9657;	교직소양
+        <input type="number" min="0" id="eduRefine" name="eduRefine" value=0 placeholder="교직소양">학점
         <input type="button" value="과목별로 보기" onclick=
         <?php if ($_GET['entryYear'] == "2009~2012년") { ?>
         "openEduRefine0912()"
@@ -161,43 +89,52 @@ require_once('view/top.php');
          >
       </p>
       <p>
-        교육실습
-        <input type="number" min="0" id="eduPractice" name="eduPractice" placeholder="교육실습">학점
-        <input type="button" value="과목별로 보기" onclick="openEduPractice()">
+        &#9657;	교육실습
+        <input type="number" min="0" id="eduPractice" name="eduPractice" value=0 placeholder="교육실습">학점
+        <input type="button" value="과목별로 보기" onclick=
+        <?php if ($_GET['entryYear'] == "2018~2020년" or $_GET['entryYear'] == "2021년 이후") {?>
+        "openEduPractice18_()"
+        <?php } else { ?>
+        "openEduPractice()"
+        <?php } ?>
+        >
       </p>
       <p>
-        교직 적성 및 인성검사
-        <input type="number" min="0" name="eduTest" placeholder="적합횟수">회 적합
+        &#9657;	교직 적성 및 인성검사
+        <input type="number" min="0" name="eduTest" value=0 placeholder="적합횟수">회 적합
       </p>
       <p>
-        응급처치 및 심폐소생술 교육
-        <input type="number" min="0" name="cpr" placeholder="이수횟수">회 이수
+        &#9657;	응급처치 및 심폐소생술 교육
+        <input type="number" min="0" name="cpr" value=0 placeholder="이수횟수">회 이수
       </p>
       <p>
-        전공/교직 평점평균(4.5만점)
-        <input type="number" step="0.01" min="0" name="majorAvr" placeholder="전공평점">점
-        <input type="number" step="0.01" min="0" name="eduAvr" placeholder="교직평점">점
+        &#9657;	전공/교직 평점평균(4.5만점)
+        <input type="number" step="0.01" min="0" max="4.5" name="majorAvr" value=0 placeholder="전공평점">점
+        <input type="number" step="0.01" min="0" max="4.5" name="eduAvr" value=0 placeholder="교직평점">점
       </p>
-    <?php if($_GET['entryYear'] == "2016~2020년" or $_GET['entryYear'] == "2021년 이후") { ?>
+    <?php if($_GET['entryYear'] == "2016~2017년" or $_GET['entryYear'] == "2018~2020년" or $_GET['entryYear'] == "2021년 이후") { ?>
       <p>
-        성인지교육
-        <input type="number" min="0" name="gender" placeholder="이수횟수">회 이수
+        &#9657;	성 인지 교육
+        <input type="number" min="0" name="gender" value=0 placeholder="이수횟수">회 이수
       </p>
     <?php } else {} ?>
 
       <p>
-        <input type="submit">
+        <input type="button" id="resultSubmit" value="확인" onClick="resultConfirm();">
       </p>
-      <br><br><br><br><br><br>
     </form>
-    <?php
+
+    <!-- 메인 페이지, 입력 페이지 구분-->
+  <?php
   } else {
      ?>
+     <!-- 메인페이지 자바스크립트 -->
+     <?php require_once('lib/initialSubmit.php') ?>
      <br>
-     <b><font color="blue" size="4px">소속과 학과, 입학년도를 선택해주세요.</font></b>
+     <b><font color="blue" size="4px">&squ; 소속과 학과, 입학년도를 선택해주세요.</font></b>
 
-     <form action="index.php" name="basic">
-       <h3>소속구분</h3>
+     <form action="index.php" name="basic" style="margin-left: 20px;">
+       <h3>&#9654; 소속구분</h3>
        <!--<input type="radio" name="institution" value="사범대학">
        <label for="사범대학">사범대학</label>
        <select type=radio name="department1">
@@ -212,10 +149,10 @@ require_once('view/top.php');
          <option value="체육교육과">체육교육과</option>
        </select>
       <br>-->
-       <input type="radio" name="institution" value="일반대학 교직과정">
-       <label for="일반대학 교직과정">일반대학 교직과정</label>
-       <select type=radio name="department2">
-         <option value=null></option>
+       <input type="radio" name="institution" id="institution2" value="일반대학 교직과정">
+       <label for="institution2">일반대학 교직과정</label>
+       <select type=radio name="department2" id="department2" onClick="autoDep2()">
+         <option value="null"></option>
          <option value="간호학과">간호학과</option>
          <option value="경제학과">경제학과</option>
          <option value="국어국문학과">국어국문학과</option>
@@ -238,10 +175,10 @@ require_once('view/top.php');
          <option value="행정학과">행정학과</option>
          <option value="화학과">화학과</option>
        </select><br>
-       <input type="radio" name="institution" value="교육대학원">
-       <label for="교육대학원">교육대학원</label>
-       <select type=radio name="department3">
-         <option value=null></option>
+       <input type="radio" name="institution" id="institution3" value="교육대학원">
+       <label for="institution3">교육대학원</label>
+       <select type=radio name="department3" onClick="autoDep3()">
+         <option value="null"></option>
          <option value="가정교육전공">가정교육전공</option>
          <option value="국어교육전공">국어교육전공</option>
          <option value="도덕윤리교육전공">도덕윤리교육전공</option>
@@ -257,17 +194,36 @@ require_once('view/top.php');
          <option value="체육교육전공">체육교육전공</option>
          <option value="컴퓨터교육전공">컴퓨터교육전공</option>
        </select><br>
-        <h3>입학년도</h3>
-       <input type="radio" name="entryYear" value="2009~2012년">
+        <h3>&#9654;	입학년도</h3>
+       <input type="radio" name="entryYear" id="2009~2012년" value="2009~2012년">
        <label for="2009~2012년">2009~2012년</label><br>
-       <input type="radio" name="entryYear" value="2013~2015년">
+       <input type="radio" name="entryYear" id="2013~2015년" value="2013~2015년">
        <label for="2013~2015년">2013~2015년</label><br>
-       <input type="radio" name="entryYear" value="2016~2020년">
-       <label for="2016~2020년">2016~2020년</label><br>
-       <input type="radio" name="entryYear" value="2021년 이후">
+       <input type="radio" name="entryYear" id="2016~2017년" value="2016~2017년">
+       <label for="2016~2017년">2016~2017년</label><br>
+       <input type="radio" name="entryYear" id="2018~2020년" value="2018~2020년">
+       <label for="2018~2020년">2018~2020년</label><br>
+       <input type="radio" name="entryYear" id="2021년 이후" value="2021년 이후">
        <label for="2021년 이후">2021년 이후</label><br><br>
-       <input type="submit" value="다음"><br><br><br><br><br><br><br>
+       <input type="button" id="initialSubmit" value="다음" onClick="institutionAutoCheck()">
      </form>
+
+<script type="text/javascript">
+  function autoDep2() {
+    if(document.querySelector('select[name="department2"]').value != null) {
+      document.querySelector('input[value="일반대학 교직과정"]').checked = true;
+      document.querySelector('select[name="department3"]').value = null;
+    }
+  }
+  function autoDep3() {
+    if(document.querySelector('select[name="department3"]').value != null) {
+      document.querySelector('input[value="교육대학원"]').checked = true;
+      document.querySelector('select[name="department2"]').value = null;
+    }
+  }
+</script>
+
+
    <?php
   }
   require_once('view/bottom.php')

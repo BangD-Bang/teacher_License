@@ -2,10 +2,23 @@
 require_once('lib/print.php');
 $department = $_GET['department'];
 ?>
+
+<script>
+function overlap_c() {
+  if(mES1_1.checked == true) {
+    document.getElementById('majorEduOverlap').value = "1";
+  }
+  if(mES1_1.checked == false) {
+    document.getElementById('majorEduOverlap').value = "0";
+  }
+}
+</script>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="styler.css">
     <title>기본이수과목</title>
     <script>
     function itemSum(frm)
@@ -22,6 +35,7 @@ $department = $_GET['department'];
 
     function setParentText(){
              opener.document.getElementById("majorBasic").value = document.getElementById("total_sum").value;
+             opener.document.getElementById("majorEduCheck").value = document.getElementById("majorEduOverlap").value;
              <?php if($department == "국어국문학과" || $department == "가정교육전공" || $department == "국어교육전공" || $department == "도덕윤리교육전공" || $department == "역사교육전공" || $department == "컴퓨터교육전공") { ?>
              opener.document.getElementById("area_check").value = document.getElementById("area_result").value;
              <?php } ?>
@@ -31,9 +45,21 @@ $department = $_GET['department'];
 
   </head>
   <body>
-    <h3>이수한 기본이수과목</h3>
+    <h3 id="popUpTitle">기본이수과목</h3>
+    <div id="popUpBody">
     <?php
       require_once('기본이수과목/'.$department.'.php');
      ?>
+
+     <script type="text/javascript">
+     function setCheck() {
+       document.getElementById("majorEduOverlap").value = opener.document.getElementById("majorEduCheck").value;
+       if(document.getElementById("majorEduOverlap").value == "1") {
+         document.querySelector("#area1_1").click();
+       }
+     }
+     setCheck();
+     </script>
+   </div>
   </body>
 </html>

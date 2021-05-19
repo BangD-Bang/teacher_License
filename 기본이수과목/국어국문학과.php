@@ -21,11 +21,11 @@ function area_c() {
   if(mES4_1_1.checked == true || mES4_2_1.checked == true || mES4_3_1.checked == true || mES4_4_1.checked == true || mES4_4_2.checked == true || mES4_5_1.checked == true || mES4_5_2.checked == true) {aryDelete(d); n = n + 1;}
   if(mES5_1_1.checked == true || mES5_1_2.checked == true || mES5_2_1.checked == true || mES5_2_2.checked == true) {aryDelete(e); n = n + 1;}
   if(n >= 5) {
-    document.getElementById('area_result').value = "(영역조건: 이수완료)<br>";
+    document.getElementById('area_result').value = "이수완료";
   } else if(n == 0) {
-    document.getElementById('area_result').value = "(영역조건: 5개 영역 미이수)<br>";
+    document.getElementById('area_result').value = "5개 영역 <font color='red'><b>미이수</b></font>";
   } else if(n >= 1) {
-    document.getElementById('area_result').value = "(영역조건: "+ary+" 미이수)<br>";
+    document.getElementById('area_result').value = ary+" <font color='red'><b>미이수</b></font>";
   } else {
     document.getElementById('area_result').value = "";
   }
@@ -38,7 +38,8 @@ function area_c() {
 <table width="500" border="0" cellspacing="0" cellpadding="0">
   <b>1영역 국어교육론</b>
   <tr>
-    <td height="25">&nbsp;<input name="chkbox" type="checkbox" id="area1_1" value="3" onClick="itemSum(this.form);">&nbsp;[KORE227]국어교과교육론 - 3학점</td>
+    <td height="25">&nbsp;<input name="chkbox" type="checkbox" id="area1_1" value="3" onClick="itemSum(this.form);">
+      <label for="area1_1">&nbsp;[KORE227] 국어교과교육론 - 3학점</label></td>
   </tr>
 </table><br>
 <script type="text/javascript">
@@ -48,10 +49,12 @@ function area_c() {
 <table width="500" border="0" cellspacing="0" cellpadding="0">
   <b>2-1영역 국어학개론</b>
   <tr>
-    <td height="25">&nbsp;<input name="chkbox" type="checkbox" id="area2_1_1" value="3" onClick="mES2_1();itemSum(this.form);">&nbsp;[KORE202]국어학의이해(구) - 3학점</td>
+    <td height="25">&nbsp;<input name="chkbox" type="checkbox" id="area2_1_1" value="3" onClick="mES2_1();itemSum(this.form);">
+      <label for="area2_1_1">&nbsp;[KORE202] 국어학의이해(구) - 3학점</label></td>
   </tr>
   <tr>
-    <td height="25">&nbsp;<input name="chkbox" type="checkbox" id="area2_1_2" value="3" onClick="mES2_1_();itemSum(this.form);">&nbsp;[KORE230]한국어학의이해(구) - 3학점</td>
+    <td height="25">&nbsp;<input name="chkbox" type="checkbox" id="area2_1_2" value="3" onClick="mES2_1_();itemSum(this.form);">
+      <label for="area2_1_2">&nbsp;[KORE230] 한국어학의이해(구) - 3학점</label></td>
   </tr>
 </table><br>
 <script>
@@ -71,10 +74,12 @@ function mES2_1_() {
 <table width="500" border="0" cellspacing="0" cellpadding="0">
   <b>2-2영역 국어문법론</b>
   <tr>
-    <td height="25">&nbsp;<input name="chkbox" type="checkbox" id="area2_2_1" value="3" onClick="mES2_2();itemSum(this.form);">&nbsp;[KORE206]국어문법의이해(구) - 3학점</td>
+    <td height="25">&nbsp;<input name="chkbox" type="checkbox" id="area2_2_1" value="3" onClick="mES2_2();itemSum(this.form);">
+      <label for="area2_2_1">&nbsp;[KORE206] 국어문법의이해(구) - 3학점</label></td>
   </tr>
   <tr>
-    <td height="25">&nbsp;<input name="chkbox" type="checkbox" id="area2_2_2" value="3" onClick="mES2_2_();itemSum(this.form);">&nbsp;[KORE234]한국어문법의이해(구) - 3학점</td>
+    <td height="25">&nbsp;<input name="chkbox" type="checkbox" id="area2_2_2" value="3" onClick="mES2_2_();itemSum(this.form);">
+      <label for="area2_2_2">&nbsp;[KORE234] 한국어문법의이해(구) - 3학점</label></td>
   </tr>
 </table><br>
 <script>
@@ -94,10 +99,12 @@ function mES2_2_() {
 <table width="500" border="0" cellspacing="0" cellpadding="0">
   <b>2-3영역 국어사</b>
   <tr>
-    <td height="25">&nbsp;<input name="chkbox" type="checkbox" id="area2_3_1" value="3" onClick="mES2_3();itemSum(this.form);">&nbsp;[KORE205]국어발달사(구) - 3학점</td>
+    <td height="25">&nbsp;<input name="chkbox" type="checkbox" id="area2_3_1" value="3" onClick="mES2_3();itemSum(this.form);">
+      <label for="area2_3_1">&nbsp;[KORE205] 국어발달사(구) - 3학점</label></td>
   </tr>
   <tr>
-    <td height="25">&nbsp;<input name="chkbox" type="checkbox" id="area2_3_2" value="3" onClick="mES2_3_();itemSum(this.form);">&nbsp;[KORE233]한국어발달사(구) - 3학점</td>
+    <td height="25">&nbsp;<input name="chkbox" type="checkbox" id="area2_3_2" value="3" onClick="mES2_3_();itemSum(this.form);">
+      <label for="area2_3_2">&nbsp;[KORE233] 한국어발달사(구) - 3학점</label></td>
   </tr>
 </table><br>
 <script>
@@ -117,7 +124,8 @@ function mES2_3_() {
 <table width="500" border="0" cellspacing="0" cellpadding="0">
   <b>3-1영역 국문학개론</b>
   <tr>
-    <td height="25">&nbsp;<input name="chkbox" type="checkbox" id="area3_1_1" rowspan=""value="3" onClick="itemSum(this.form);">&nbsp;[KORE203]한국문학의이해 - 3학점</td>
+    <td height="25">&nbsp;<input name="chkbox" type="checkbox" id="area3_1_1" rowspan=""value="3" onClick="itemSum(this.form);">
+      <label for="area3_1_1">&nbsp;[KORE203] 한국문학의이해 - 3학점</label></td>
   </tr>
 </table><br>
 <script type="text/javascript">
@@ -127,10 +135,12 @@ function mES2_3_() {
 <table width="500" border="0" cellspacing="0" cellpadding="0">
   <b>3-2영역 국문학사 - 택1</b>
   <tr>
-    <td height="25">&nbsp;<input name="chkbox" type="checkbox" id="area3_2_1" value="3" onClick="mES3_2();itemSum(this.form);">&nbsp;[KORE215]고전문학사 - 3학점</td>
+    <td height="25">&nbsp;<input name="chkbox" type="checkbox" id="area3_2_1" value="3" onClick="mES3_2();itemSum(this.form);">
+      <label for="area3_2_1">&nbsp;[KORE215] 고전문학사 - 3학점</label></td>
   </tr>
   <tr>
-    <td height="25">&nbsp;<input name="chkbox" type="checkbox" id="area3_2_2" value="3" onClick="mES3_2_();itemSum(this.form);">&nbsp;[KORE213]현대문학사 - 3학점</td>
+    <td height="25">&nbsp;<input name="chkbox" type="checkbox" id="area3_2_2" value="3" onClick="mES3_2_();itemSum(this.form);">
+      <label for="area3_2_2">&nbsp;[KORE213] 현대문학사 - 3학점</label></td>
   </tr>
 </table><br>
 <script>
@@ -150,31 +160,36 @@ function mES3_2_() {
 <table width="500" border="0" cellspacing="0" cellpadding="0">
   <b>4-1영역 문학교육론</b>
   <tr>
-    <td height="25">&nbsp;<input name="chkbox" type="checkbox" id="area4_1_1" value="3" onClick="itemSum(this.form);">&nbsp;[KORE210]현대비평론 - 3학점</td>
+    <td height="25">&nbsp;<input name="chkbox" type="checkbox" id="area4_1_1" value="3" onClick="itemSum(this.form);">
+      <label for="area4_1_1">&nbsp;[KORE210] 현대비평론 - 3학점</label></td>
   </tr>
 </table><br>
 
 <table width="500" border="0" cellspacing="0" cellpadding="0">
   <b>4-2영역 희곡교육론</b>
   <tr>
-    <td height="25">&nbsp;<input name="chkbox" type="checkbox" id="area4_2_1" value="3" onClick="itemSum(this.form);">&nbsp;[KORE211]현대희곡론 - 3학점</td>
+    <td height="25">&nbsp;<input name="chkbox" type="checkbox" id="area4_2_1" value="3" onClick="itemSum(this.form);">
+      <label for="area4_2_1">&nbsp;[KORE211] 현대희곡론 - 3학점</label></td>
   </tr>
 </table><br>
 
 <table width="500" border="0" cellspacing="0" cellpadding="0">
   <b>4-3영역 수필교육론</b>
   <tr>
-    <td height="25">&nbsp;<input name="chkbox" type="checkbox" id="area4_3_1" value="3" onClick="itemSum(this.form);">&nbsp;[KORE217]구비문학론 - 3학점</td>
+    <td height="25">&nbsp;<input name="chkbox" type="checkbox" id="area4_3_1" value="3" onClick="itemSum(this.form);">
+      <label for="area4_3_1">&nbsp;[KORE217] 구비문학론 - 3학점</label></td>
   </tr>
 </table><br>
 
 <table width="500" border="0" cellspacing="0" cellpadding="0">
   <b>4-4영역 시가교육론 - 택1</b>
   <tr>
-    <td height="25">&nbsp;<input name="chkbox" type="checkbox" id="area4_4_1" value="3" onClick="mES4_4();itemSum(this.form);">&nbsp;[KORE218]근세시가론 - 3학점</td>
+    <td height="25">&nbsp;<input name="chkbox" type="checkbox" id="area4_4_1" value="3" onClick="mES4_4();itemSum(this.form);">
+      <label for="area4_4_1">&nbsp;[KORE218] 근세시가론 - 3학점</label></td>
   </tr>
   <tr>
-    <td height="25">&nbsp;<input name="chkbox" type="checkbox" id="area4_4_2" value="3" onClick="mES4_4_();itemSum(this.form);">&nbsp;[KORE209]현대시론 - 3학점</td>
+    <td height="25">&nbsp;<input name="chkbox" type="checkbox" id="area4_4_2" value="3" onClick="mES4_4_();itemSum(this.form);">
+      <label for="area4_4_2">&nbsp;[KORE209] 현대시론 - 3학점</label></td>
   </tr>
 </table><br>
 <script>
@@ -197,10 +212,12 @@ function mES4_4_() {
 <table width="500" border="0" cellspacing="0" cellpadding="0">
   <b>4-5영역 소설교육론 - 택1</b>
   <tr>
-    <td height="25">&nbsp;<input name="chkbox" type="checkbox" id="area4_5_1" value="3" onClick="mES4_5();itemSum(this.form);">&nbsp;[KORE219]고전소설론 - 3학점</td>
+    <td height="25">&nbsp;<input name="chkbox" type="checkbox" id="area4_5_1" value="3" onClick="mES4_5();itemSum(this.form);">
+      <label for="area4_5_1">&nbsp;[KORE219] 고전소설론 - 3학점</label></td>
   </tr>
   <tr>
-    <td height="25">&nbsp;<input name="chkbox" type="checkbox" id="area4_5_2" value="3" onClick="mES4_5_();itemSum(this.form);">&nbsp;[KORE223]현대소설론 - 3학점</td>
+    <td height="25">&nbsp;<input name="chkbox" type="checkbox" id="area4_5_2" value="3" onClick="mES4_5_();itemSum(this.form);">
+      <label for="area4_5_2">&nbsp;[KORE223] 현대소설론 - 3학점</label></td>
   </tr>
 </table><br>
 <script>
@@ -220,10 +237,12 @@ function mES4_5_() {
 <table width="500" border="0" cellspacing="0" cellpadding="0">
   <b>5-1영역 의사소통교육론(표현교육론)</b>
   <tr>
-    <td height="25">&nbsp;<input name="chkbox" type="checkbox" id="area5_1_1" value="3" onClick="mES5_1();itemSum(this.form);">&nbsp;[KORE225]국어표현론(구) - 3학점</td>
+    <td height="25">&nbsp;<input name="chkbox" type="checkbox" id="area5_1_1" value="3" onClick="mES5_1();itemSum(this.form);">
+      <label for="area5_1_1">&nbsp;[KORE225] 국어표현론(구) - 3학점</label></td>
   </tr>
   <tr>
-    <td height="25">&nbsp;<input name="chkbox" type="checkbox" id="area5_1_2" value="3" onClick="mES5_1_();itemSum(this.form);">&nbsp;[KORE235]한국어표현론(신) - 3학점</td>
+    <td height="25">&nbsp;<input name="chkbox" type="checkbox" id="area5_1_2" value="3" onClick="mES5_1_();itemSum(this.form);">
+      <label for="area5_1_2">&nbsp;[KORE235] 한국어표현론(신) - 3학점</label></td>
   </tr>
 </table><br>
 <script>
@@ -243,10 +262,12 @@ function mES5_1_() {
 <table width="500" border="0" cellspacing="0" cellpadding="0">
   <b>5-2영역 의사소통교육론(이해교육론)</b>
   <tr>
-    <td height="25">&nbsp;<input name="chkbox" type="checkbox" id="area5_2_1" value="3" onClick="mES5_2();itemSum(this.form);">&nbsp;[KORE414]국어정책론(구) - 3학점</td>
+    <td height="25">&nbsp;<input name="chkbox" type="checkbox" id="area5_2_1" value="3" onClick="mES5_2();itemSum(this.form);">
+      <label for="area5_2_1">&nbsp;[KORE414] 국어정책론(구) - 3학점</label></td>
   </tr>
   <tr>
-    <td height="25">&nbsp;<input name="chkbox" type="checkbox" id="area5_2_2" value="3" onClick="mES5_2_();itemSum(this.form);">&nbsp;[KORE426]한국어정책론(신) - 3학점</td>
+    <td height="25">&nbsp;<input name="chkbox" type="checkbox" id="area5_2_2" value="3" onClick="mES5_2_();itemSum(this.form);">
+      <label for="area5_2_2">&nbsp;[KORE426] 한국어정책론(신) - 3학점</label></td>
   </tr>
 </table><br>
 <script>
@@ -267,9 +288,10 @@ function mES5_2_() {
   <tr>
     <td height="25">&nbsp;합계:&nbsp;<input id="total_sum" name="total_sum" type="text" size="20"></td>
     <input type="hidden" id="area_result" name="area_result" value="">
+    <input type="hidden" id="majorEduOverlap" name="majorEduOverlap" value="0">
   </tr>
   <tr>
-    <td height="25">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" value="확인" onclick="area_c();setParentText();"></td>
+    <td height="25">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" id="popUpSubmit" value="확인" onclick="overlap_c();area_c();setParentText();"></td>
   </tr>
 </table>
 </form>

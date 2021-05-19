@@ -1,111 +1,125 @@
 <div>
-<a href=#none id="show1" onclick="if(hide1.style.display=='none') {hide1.style.display='';show1.innerText='▲접기'} else {hide1.style.display='none';show1.innerText='▶중등2급 상담'}">▶중등2급 상담</a>
+<a href=#none id="show1" onclick="if(hide1.style.display=='none') {hide1.style.display='';show1.innerText='▲중등2급 상담(접기)';show2.innerText='';} else {hide1.style.display='none';show1.innerText='▶중등2급 상담';show2.innerText='▶전문상담교사 2급';}">▶중등2급 상담</a>
 <div id="hide1" style="display: none">
 
   <form name="form">
   <table width="500" border="0" cellspacing="0" cellpadding="0">
     <b>1영역 상담이론</b>
     <tr>
-      <td height="25">&nbsp;<input name="chkbox" type="checkbox" id="area1_1" value="2" onClick="mES1();itemSum(this.form);">&nbsp;상담의이론과실제</td>
+      <td height="25">&nbsp;<input name="chkbox" type="checkbox" id="area1_1" value="2" onClick="mES1();itemSum(this.form);">
+        <label for="area1_1">&nbsp;상담의이론과실제</label></td>
     </tr>
   </table><br>
 
   <table width="500" border="0" cellspacing="0" cellpadding="0">
     <b>3영역 심리검사</b>
     <tr>
-      <td height="25">&nbsp;<input name="chkbox" type="checkbox" id="area2_1" value="2" onClick="mES1();itemSum(this.form);">&nbsp;심리검사</td>
+      <td height="25">&nbsp;<input name="chkbox" type="checkbox" id="area2_1" value="2" onClick="mES1();itemSum(this.form);">
+        <label for="area2_1">&nbsp;심리검사</label></td>
     </tr>
   </table><br>
 
   <table width="500" border="0" cellspacing="0" cellpadding="0">
     <b>5영역 집단상담</b>
     <tr>
-      <td height="25">&nbsp;<input name="chkbox" type="checkbox" id="area3_1" value="2" onClick="mES1();itemSum(this.form);">&nbsp;집단상담</td>
+      <td height="25">&nbsp;<input name="chkbox" type="checkbox" id="area3_1" value="2" onClick="mES1();itemSum(this.form);">
+        <label for="area3_1">&nbsp;집단상담</label></td>
     </tr>
   </table><br>
 
   <table width="500" border="0" cellspacing="0" cellpadding="0">
     <b>6영역 진로상담</b>
     <tr>
-      <td height="25">&nbsp;<input name="chkbox" type="checkbox" id="area4_1" value="2" onClick="mES1();itemSum(this.form);">&nbsp;진로상담</td>
+      <td height="25">&nbsp;<input name="chkbox" type="checkbox" id="area4_1" value="2" onClick="mES1();itemSum(this.form);">
+        <label for="area4_1">&nbsp;진로상담</label></td>
     </tr>
   </table><br>
 
   <table width="500" border="0" cellspacing="0" cellpadding="0">
     <b>7영역 심리치료</b>
     <tr>
-      <td height="25">&nbsp;<input name="chkbox" type="checkbox" id="area5_1" value="2" onClick="mES1();itemSum(this.form);">&nbsp;상담심리</td>
+      <td height="25">&nbsp;<input name="chkbox" type="checkbox" id="area5_1" value="2" onClick="mES1();itemSum(this.form);">
+        <label for="area5_1">&nbsp;상담심리</label></td>
     </tr>
   </table><br>
 
   <table width="500" border="0" cellspacing="0" cellpadding="0">
     <b>13영역 학습심리</b>
     <tr>
-      <td height="25">&nbsp;<input name="chkbox" type="checkbox" id="area6_1" value="2" onClick="mES1();itemSum(this.form);">&nbsp;학습심리학</td>
+      <td height="25">&nbsp;<input name="chkbox" type="checkbox" id="area6_1" value="2" onClick="mES1();itemSum(this.form);">
+        <label for="area6_1">&nbsp;학습심리학</label></td>
     </tr>
   </table><br>
 
   <table width="500" border="0" cellspacing="0" cellpadding="0">
     <b>14영역 성격심리</b>
     <tr>
-      <td height="25">&nbsp;<input name="chkbox" type="checkbox" id="area7_1" value="2" onClick="mES1();itemSum(this.form);">&nbsp;성격심리</td>
+      <td height="25">&nbsp;<input name="chkbox" type="checkbox" id="area7_1" value="2" onClick="mES1();itemSum(this.form);">
+        <label for="area7_1">&nbsp;성격심리</label></td>
     </tr>
   </table><br>
 
 </div>
-</div><br>
+</div>
 
 <div>
-<a href=#none id="show2" onclick="if(hide2.style.display=='none') {hide2.style.display='';show2.innerText='▲접기'} else {hide2.style.display='none';show2.innerText='▶전문상담교사 2급'}">▶전문상담교사 2급</a>
+<a href=#none id="show2" onclick="if(hide2.style.display=='none') {hide2.style.display='';show2.innerText='▲전문상담교사 2급(접기)';show1.innerText='';} else {hide2.style.display='none';show2.innerText='▶전문상담교사 2급';show1.innerText='▶중등2급 상담';}">▶전문상담교사 2급</a>
 <div id="hide2" style="display: none">
 
   <form name="form">
   <table width="500" border="0" cellspacing="0" cellpadding="0">
     <b>2영역 심리검사</b>
     <tr>
-      <td height="25">&nbsp;<input name="chkbox" type="checkbox" id="area1_2" value="2" onClick="mES2();itemSum(this.form);">&nbsp;심리검사</td>
+      <td height="25">&nbsp;<input name="chkbox" type="checkbox" id="area1_2" value="2" onClick="mES2();itemSum(this.form);">
+        <label for="area1_2">&nbsp;심리검사</label></td>
     </tr>
   </table><br>
 
   <table width="500" border="0" cellspacing="0" cellpadding="0">
     <b>3영역 성격심리학</b>
     <tr>
-      <td height="25">&nbsp;<input name="chkbox" type="checkbox" id="area2_2" value="2" onClick="mES2();itemSum(this.form);">&nbsp;성격심리학</td>
+      <td height="25">&nbsp;<input name="chkbox" type="checkbox" id="area2_2" value="2" onClick="mES2();itemSum(this.form);">
+        <label for="area2_2">&nbsp;성격심리학</label></td>
     </tr>
   </table><br>
 
   <table width="500" border="0" cellspacing="0" cellpadding="0">
     <b>4영역 특수아상담</b>
     <tr>
-      <td height="25">&nbsp;<input name="chkbox" type="checkbox" id="area3_2" value="2" onClick="mES2();itemSum(this.form);">&nbsp;특수아상담</td>
+      <td height="25">&nbsp;<input name="chkbox" type="checkbox" id="area3_2" value="2" onClick="mES2();itemSum(this.form);">
+        <label for="area3_2">&nbsp;특수아상담</label></td>
     </tr>
   </table><br>
 
   <table width="500" border="0" cellspacing="0" cellpadding="0">
     <b>5영역 집단상담</b>
     <tr>
-      <td height="25">&nbsp;<input name="chkbox" type="checkbox" id="area4_2" value="2" onClick="mES2();itemSum(this.form);">&nbsp;집단상담</td>
+      <td height="25">&nbsp;<input name="chkbox" type="checkbox" id="area4_2" value="2" onClick="mES2();itemSum(this.form);">
+        <label for="area4_2">&nbsp;집단상담</label></td>
     </tr>
   </table><br>
 
   <table width="500" border="0" cellspacing="0" cellpadding="0">
     <b>6영역 가족상담</b>
     <tr>
-      <td height="25">&nbsp;<input name="chkbox" type="checkbox" id="area5_2" value="2" onClick="mES2();itemSum(this.form);">&nbsp;가족상담</td>
+      <td height="25">&nbsp;<input name="chkbox" type="checkbox" id="area5_2" value="2" onClick="mES2();itemSum(this.form);">
+        <label for="area5_2">&nbsp;가족상담</label></td>
     </tr>
   </table><br>
 
   <table width="500" border="0" cellspacing="0" cellpadding="0">
     <b>7영역 진로상담</b>
     <tr>
-      <td height="25">&nbsp;<input name="chkbox" type="checkbox" id="area6_2" value="2" onClick="mES2();itemSum(this.form);">&nbsp;진로상담</td>
+      <td height="25">&nbsp;<input name="chkbox" type="checkbox" id="area6_2" value="2" onClick="mES2();itemSum(this.form);">
+        <label for="area6_2">&nbsp;진로상담</label></td>
     </tr>
   </table><br>
 
   <table width="500" border="0" cellspacing="0" cellpadding="0">
     <b>8영역 상담이론과실제</b>
     <tr>
-      <td height="25">&nbsp;<input name="chkbox" type="checkbox" id="area7_2" value="2" onClick="mES2();itemSum(this.form);">&nbsp;상담의이론과실제</td>
+      <td height="25">&nbsp;<input name="chkbox" type="checkbox" id="area7_2" value="2" onClick="mES2();itemSum(this.form);">
+        <label for="area7_2">&nbsp;상담의이론과실제</label></td>
     </tr>
   </table><br>
 
@@ -153,9 +167,10 @@ function mES2() {
 <table>
   <tr>
     <td height="25">&nbsp;합계:&nbsp;<input id="total_sum" name="total_sum" type="text" size="20"></td>
+    <input type="hidden" id="majorEduOverlap" name="majorEduOverlap" value="0">
   </tr>
   <tr>
-    <td height="25">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" value="확인" onclick="setParentText()"></td>
+    <td height="25">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" id="popUpSubmit" value="확인" onclick="setParentText()"></td>
   </tr>
 </table>
 </form>

@@ -1,3 +1,13 @@
+<script>
+function overlap_c() {
+  if(mES1_1.checked == true) {
+    document.getElementById('majorEduOverlap').value = "1";
+  }
+  if(mES1_1.checked == false) {
+    document.getElementById('majorEduOverlap').value = "0";
+  }
+}
+</script>
 <?php
 require_once('lib/print.php');
 ?>
@@ -5,6 +15,7 @@ require_once('lib/print.php');
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="styler.css">
     <title>교과교육영역</title>
     <script>
     function itemSum(frm)
@@ -21,31 +32,50 @@ require_once('lib/print.php');
 
     function setParentText(){
              opener.document.getElementById("majorEdu").value = document.getElementById("total_sum").value;
+             opener.document.getElementById("majorEduCheck").value = document.getElementById("majorEduOverlap").value;
              window.close();
         }
     </script>
 
   </head>
   <body>
-    <h3>이수한 교과교육영역 과목</h3>
+    <h3 id="popUpTitle">교과교육영역</h3>
+    <div id="popUpBody">
     <form name="form">
     <table width="500" border="0" cellspacing="0" cellpadding="0">
       <tr>
-        <td height="25">&nbsp;<input name="chkbox" type="checkbox" value="3" onClick="itemSum(this.form);">&nbsp;교과교육론(3학점)</td>
+        <td height="25">&nbsp;<input name="chkbox" type="checkbox" id="area1_1" value="3" onClick="itemSum(this.form);">
+          <label for="area1_1">&nbsp;교과교육론(3학점)</label></td>
+      </tr>
+      <script type="text/javascript">
+        const mES1_1 = document.querySelector('#area1_1');
+      </script>
+      <tr>
+        <td height="25">&nbsp;<input name="chkbox" type="checkbox" id="area2_1" value="3" onClick="itemSum(this.form);">
+          <label for="area2_1">&nbsp;교과교재연구및지도법(3학점)</label></td>
       </tr>
       <tr>
-        <td height="25">&nbsp;<input name="chkbox" type="checkbox" value="3" onClick="itemSum(this.form);">&nbsp;교과교재연구및지도법(3학점)</td>
-      </tr>
-      <tr>
-        <td height="25">&nbsp;<input name="chkbox" type="checkbox" value="2" onClick="itemSum(this.form);">&nbsp;교과논리및논술(2학점)</td>
+        <td height="25">&nbsp;<input name="chkbox" type="checkbox" id="area3_1" value="2" onClick="itemSum(this.form);">
+          <label for="area3_1">&nbsp;교과논리및논술(2학점)</label></td>
       </tr>
       <tr>
         <td height="25">&nbsp;합계:&nbsp;<input id="total_sum" name="total_sum" type="text" size="20"></td>
       </tr>
       <tr>
-        <td height="25">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" value="확인" onclick="setParentText()"></td>
+        <td height="25">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" id="popUpSubmit" value="확인" onclick="overlap_c();setParentText();"></td>
+        <input type="hidden" id="majorEduOverlap" name="majorEduOverlap" value="0">
       </tr>
+      <script type="text/javascript">
+      function setCheck() {
+        document.getElementById("majorEduOverlap").value = opener.document.getElementById("majorEduCheck").value;
+        if(document.getElementById("majorEduOverlap").value == "1") {
+          document.querySelector("#area1_1").click();
+        }
+      }
+      setCheck();
+      </script>
     </table>
     </form>
+  </div>
   </body>
 </html>

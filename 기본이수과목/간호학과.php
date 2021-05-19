@@ -1,3 +1,52 @@
+<script>
+function area_c() {
+  var a = "2영역";
+  var b = "3영역";
+  var c = "5영역";
+  var d = "8영역";
+  var e = "9영역";
+  var f = "10영역";
+  var g = "11영역";
+  const ary = [a,b,c,d,e,f,g];
+  var n = 0;
+  function aryDelete(theV) {
+    for(var i = 0; i < ary.length; i++) {
+      if(ary[i] === theV) {
+        ary.splice(i, 1);
+        i--;
+      }
+    }
+  }
+  if(mES2_1.checked == true || mES2_4.checked == true || (mES2_2.checked == true && mES2_3.checked == true)) {aryDelete(a); n = n + 1;}
+  if((mES3_1.checked == true && (mES3_2.checked == true || mES3_3.checked == true || mES3_4.checked == true)) || (mES3_4.checked == true && (mES3_1.checked == true || mES3_2.checked == true || mES3_3.checked == true))) {aryDelete(b); n = n + 1;}
+
+  if(mES5_1.checked == true && (mES5_2.checked == true || mES5_4.checked == true || mES5_5.checked == true || mES5_6.checked == true)) {
+    const mES5_1Check = true;
+  } else { const mES5_1Check = false; }
+  if(mES5_2.checked == true && (mES5_1.checked == true || mES5_4.checked == true || mES5_5.checked == true || mES5_6.checked == true)) {
+    const mES5_2Check = true;
+  } else { const mES5_2Check = false; }
+  if(mES5_4.checked == true && (mES5_1.checked == true || mES5_2.checked == true || mES5_5.checked == true || mES5_6.checked == true)) {
+    const mES5_4Check = true;
+  } else { const mES5_4Check = false; }
+
+  if(mES5_3.checked == true || mES5_1Check == true || mES5_2Check == true || mES5_4Check == true) {aryDelete(c); n = n + 1;}
+  if(mES8_1.checked == true || mES8_2.checked == true || mES8_5.checked == true || (mES8_3.checked == true && mES8_4.checked == true)) {aryDelete(d); n = n + 1;}
+  if(mES9_1.checked == true) {aryDelete(e); n = n + 1;}
+  if(mES10_1.checked == true || mES10_2.checked == true || mES10_5.checked == true || (mES10_3.checked == true && mES10_4.checked == true)) {aryDelete(f); n = n + 1;}
+  if(mES11_1.checked == true || mES11_2.checked == true || mES11_5.checked == true || (mES11_3.checked == true && mES11_4.checked == true)) {aryDelete(g); n = n + 1;}
+  if(n >= 7) {
+    document.getElementById('area_result').value = "이수완료";
+  } else if(n == 0) {
+    document.getElementById('area_result').value = "7개 영역 <font color='red'><b>미이수</b></font>";
+  } else if(n >= 1) {
+    document.getElementById('area_result').value = ary+" <font color='red'><b>미이수</b></font>";
+  } else {
+    document.getElementById('area_result').value = "";
+  }
+}
+</script>
+
 <form name="form">
 <table width="500" border="0" cellspacing="0" cellpadding="0">
   <b>2영역 간호관리학 - 3학점 이상</b>
@@ -56,6 +105,12 @@
       <label for="area3_4">&nbsp;[NRSG266] 기본간호학실습II - 2학점</label></td>
   </tr>
 </table><br>
+<script>
+  const mES3_1 = document.querySelector('#area3_1');
+  const mES3_2 = document.querySelector('#area3_2');
+  const mES3_3 = document.querySelector('#area3_3');
+  const mES3_4 = document.querySelector('#area3_4');
+</script>
 
 <table width="500" border="0" cellspacing="0" cellpadding="0">
   <b>4영역 상담이론과실제 - 택1</b>
@@ -121,6 +176,14 @@ function mES4__() {
       <label for="area5_6">&nbsp;[NRSG251] 기초간호과학실습II - 1학점</label></td>
   </tr>
 </table><br>
+<script>
+  const mES5_1 = document.querySelector('#area5_1');
+  const mES5_2 = document.querySelector('#area5_2');
+  const mES5_3 = document.querySelector('#area5_3');
+  const mES5_4 = document.querySelector('#area5_4');
+  const mES5_5 = document.querySelector('#area5_5');
+  const mES5_6 = document.querySelector('#area5_6');
+</script>
 
 <table width="500" border="0" cellspacing="0" cellpadding="0">
   <b>6영역 건강사정및실습</b>
@@ -202,6 +265,13 @@ function mES7_() {
       <label for="area8_5">&nbsp;[NRSG435] 아동간호학실습및실습 - 3학점</label></td>
   </tr>
 </table><br>
+<script>
+  const mES8_1 = document.querySelector('#area8_1');
+  const mES8_2 = document.querySelector('#area8_2');
+  const mES8_3 = document.querySelector('#area8_3');
+  const mES8_4 = document.querySelector('#area8_4');
+  const mES8_5 = document.querySelector('#area8_5');
+</script>
 
 <table width="500" border="0" cellspacing="0" cellpadding="0">
   <b>9영역 성인간호학및실습 - 3학점 이상</b>
@@ -210,6 +280,9 @@ function mES7_() {
       <label for="area9_1">&nbsp;[NRSG280] 성인간호학V - 3학점</label></td>
   </tr>
 </table><br>
+<script>
+  const mES9_1 = document.querySelector('#area9_1');
+</script>
 
 <table width="500" border="0" cellspacing="0" cellpadding="0">
   <b>10영역 정신간호학및실습 - 3학점 이상</b>
@@ -310,10 +383,11 @@ function mES11_() {
 <table>
   <tr>
     <td height="25">&nbsp;합계:&nbsp;<input id="total_sum" name="total_sum" type="text" size="20"></td>
+    <input type="hidden" id="area_result" name="area_result" value="">
     <input type="hidden" id="majorEduOverlap" name="majorEduOverlap" value="0">
   </tr>
   <tr>
-    <td height="25">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" id="popUpSubmit" value="확인" onclick="setParentText()"></td>
+    <td height="25">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" id="popUpSubmit" value="확인" onclick="area_c();setParentText();"></td>
   </tr>
 </table>
 </form>

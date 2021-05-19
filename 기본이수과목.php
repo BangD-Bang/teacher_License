@@ -36,7 +36,7 @@ function overlap_c() {
     function setParentText(){
              opener.document.getElementById("majorBasic").value = document.getElementById("total_sum").value;
              opener.document.getElementById("majorEduCheck").value = document.getElementById("majorEduOverlap").value;
-             <?php if($department == "국어국문학과" || $department == "가정교육전공" || $department == "국어교육전공" || $department == "도덕윤리교육전공" || $department == "역사교육전공" || $department == "컴퓨터교육전공") { ?>
+             <?php if($department == "간호학과" || $department == "국어국문학과" || $department == "가정교육전공" || $department == "국어교육전공" || $department == "도덕윤리교육전공" || $department == "역사교육전공" || $department == "컴퓨터교육전공") { ?>
              opener.document.getElementById("area_check").value = document.getElementById("area_result").value;
              <?php } ?>
              window.close();

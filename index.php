@@ -1,4 +1,5 @@
 <?php
+ini_set('display_errors','0');
 require_once('lib/print.php');
 require_once('view/top.php');
  ?>
@@ -17,6 +18,18 @@ require_once('view/top.php');
     <script type="text/javascript">
       function resultConfirm() {
         if(confirm("입력한 내용으로 결과를 확인합니다.")) {
+          if(document.getElementById('majorBasic').value == "") {
+            document.getElementById('majorBasic').value = 0;
+          }
+          if(document.getElementById('eduTheory').value == "") {
+            document.getElementById('eduTheory').value = 0;
+          }
+          if(document.getElementById('eduRefine').value == "") {
+            document.getElementById('eduRefine').value = 0;
+          }
+          if(document.getElementById('eduPractice').value == "") {
+            document.getElementById('eduPractice').value = 0;
+          }
           document.resultForm.submit();
         } else {
           return;
@@ -24,6 +37,7 @@ require_once('view/top.php');
       }
     </script>
     <input type="hidden" id="majorEduCheck" name="majorEduCheck" value="0">
+    <input type="hidden" id="korean5_3Check" name="korean5_3Check" value="0">
 
     <form action="result.php" name="resultForm" style="margin-left: 20px;">
       <input type="hidden" name="institutionCheck" value="<?php echo $_GET['institution']; ?>">
@@ -107,18 +121,20 @@ require_once('view/top.php');
         &#9657;	응급처치 및 심폐소생술 교육
         <input type="number" min="0" name="cpr" value=0 placeholder="이수횟수">회 이수
       </p>
+      <?php if($_GET['entryYear'] == "2009~2012년") { ?>
+        &#9657;	졸업평점(4.5만점)
+        <input type="number" step="0.01" min="0" max="4.5" name="graduateAvr" value=0 placeholder="졸업평점">점
+      <?php } else { ?>
       <p>
         &#9657;	전공/교직 평점평균(4.5만점)
         <input type="number" step="0.01" min="0" max="4.5" name="majorAvr" value=0 placeholder="전공평점">점
         <input type="number" step="0.01" min="0" max="4.5" name="eduAvr" value=0 placeholder="교직평점">점
       </p>
-    <?php if($_GET['entryYear'] == "2016~2017년" or $_GET['entryYear'] == "2018~2020년" or $_GET['entryYear'] == "2021년 이후") { ?>
+    <?php } ?>
       <p>
-        &#9657;	성 인지 교육
+        &#9657;	성인지 교육
         <input type="number" min="0" name="gender" value=0 placeholder="이수횟수">회 이수
       </p>
-    <?php } else {} ?>
-
       <p>
         <input type="button" id="resultSubmit" value="확인" onClick="resultConfirm();">
       </p>

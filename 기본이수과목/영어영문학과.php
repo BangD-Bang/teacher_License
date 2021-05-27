@@ -64,34 +64,55 @@ function mES3__() {
 </table><br>
 
 <table width="500" border="0" cellspacing="0" cellpadding="0">
-  <b>5영역 영어회화</b>
+  <b>5영역 영어회화</b><font color="red">
   <br>Advanced 이수자는 I, II 이수불가
+  <br>(구), (신)과목 중복인정 불가</font>
   <tr>
     <td height="25">&nbsp;<input name="chkbox" type="checkbox" id="area5_1" value="2" onClick="mES5();itemSum(this.form);">
-      <label for="area5_1">&nbsp;[IFLS003] Academic English I - 2학점</label></td>
+      <label for="area5_1">&nbsp;[IFLS100] Advanced Academic English - 2학점</label></td>
   </tr>
   <tr>
-    <td height="25">&nbsp;<input name="chkbox" type="checkbox" id="area5_2" value="2" onClick="mES5();itemSum(this.form);">
-      <label for="area5_2">&nbsp;[IFLS004] Academic English II - 2학점</label></td>
+    <td height="25">&nbsp;<input name="chkbox" type="checkbox" id="area5_2" value="2" onClick="mES5_();itemSum(this.form);">
+      <label for="area5_2">&nbsp;[IFLS003] Academic English I(구) - 2학점</label></td>
   </tr>
   <tr>
     <td height="25">&nbsp;<input name="chkbox" type="checkbox" id="area5_3" value="2" onClick="mES5_();itemSum(this.form);">
-      <label for="area5_3">&nbsp;[IFLS100] Advanced Academic English - 2학점</label></td>
+      <label for="area5_3">&nbsp;[IFLS004] Academic English II(구) - 2학점</label></td>
+  </tr>
+  <tr>
+    <td height="25">&nbsp;<input name="chkbox" type="checkbox" id="area5_4" value="1" onClick="mES5__();itemSum(this.form);">
+      <label for="area5_4">&nbsp;[IFLS011] Academic English I(신) - 1학점</label></td>
+  </tr>
+  <tr>
+    <td height="25">&nbsp;<input name="chkbox" type="checkbox" id="area5_5" value="1" onClick="mES5__();itemSum(this.form);">
+      <label for="area5_5">&nbsp;[IFLS012] Academic English II(신) - 1학점</label></td>
   </tr>
 </table><br>
 <script>
 const mES5_1 = document.querySelector('#area5_1');
 const mES5_2 = document.querySelector('#area5_2');
 const mES5_3 = document.querySelector('#area5_3');
+const mES5_4 = document.querySelector('#area5_4');
+const mES5_5 = document.querySelector('#area5_5');
 
 function mES5() {
-  if(mES5_1.checked == true || mES5_2.checked == true) {
+  if(mES5_1.checked == true) {
+    mES5_2.checked = false;
     mES5_3.checked = false;
+    mES5_4.checked = false;
+    mES5_5.checked = false;
   } }
 function mES5_() {
-  if(mES5_3.checked == true) {
+  if(mES5_2.checked == true || mES5_3.checked == true) {
+    mES5_1.checked = false;
+    mES5_4.checked = false;
+    mES5_5.checked = false;
+  } }
+function mES5__() {
+  if(mES5_4.checked == true || mES5_5.checked == true) {
     mES5_1.checked = false;
     mES5_2.checked = false;
+    mES5_3.checked = false;
   } }
 </script>
 

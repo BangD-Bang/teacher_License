@@ -1,3 +1,6 @@
+<?php
+ini_set('display_errors','0');
+ ?>
 <script>
 function overlap_c() {
   if(mES1_1.checked == true) {

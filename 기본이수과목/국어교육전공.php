@@ -30,6 +30,15 @@ function area_c() {
     document.getElementById('area_result').value = "";
   }
 }
+
+function overlap_5_3_c() {
+  if(mES5_3_1.checked == true) {
+    document.getElementById('korean5_3').value = "1";
+  }
+  if(mES5_3_1.checked == false) {
+    document.getElementById('korean5_3').value = "0";
+  }
+}
 </script>
 
 <form name="form">
@@ -228,9 +237,21 @@ function mES4_3_() {
   <tr>
     <td height="25">&nbsp;합계:&nbsp;<input id="total_sum" name="total_sum" type="text" size="20"></td>
     <input type="hidden" id="area_result" name="area_result" value="">
+    <input type="hidden" id="majorEduOverlap" name="majorEduOverlap" value="0">
+    <input type="hidden" id="korean5_3" name="korean5_3" value="0">
   </tr>
   <tr>
-    <td height="25">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" id="popUpSubmit" value="확인" onclick="area_c();setParentText();"></td>
+    <td height="25">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" id="popUpSubmit" value="확인" onclick="overlap_c();overlap_5_3_c();area_c();setParentText();"></td>
   </tr>
 </table>
 </form>
+
+<script type="text/javascript">
+function setCheck2() {
+  document.getElementById("korean5_3").value = opener.document.getElementById("korean5_3Check").value;
+  if(document.getElementById("korean5_3").value == "1") {
+    document.querySelector("#area5_3_1").click();
+  }
+}
+setCheck2();
+</script>

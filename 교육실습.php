@@ -1,4 +1,5 @@
 <?php
+ini_set('display_errors','0');
 require_once('lib/print.php');
 ?>
 <!DOCTYPE html>

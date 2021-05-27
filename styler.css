@@ -73,6 +73,15 @@ input[type=number] {
   background-color: #AC0704;
   color: white;
 }
+#conditionButton{
+  margin-left: 400px;
+  border-radius: 5px;
+  width: 150px;
+  height: 30px;
+  font-size: 15px;
+  background-color: #AC0704;
+  color: white;
+}
 #전송{
   margin-left: 450px;
   border-radius: 5px;
@@ -88,7 +97,7 @@ input[type=number] {
   }
   #broadMenu ul {
     border-right: none;
-    border-bottom: 2px solid grey;
+    border-bottom: none;
   }
   h1 {
     border-bottom: none;

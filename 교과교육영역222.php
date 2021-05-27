@@ -1,3 +1,7 @@
+<?php
+ini_set('display_errors','0');
+$department = $_GET['department'];
+ ?>
 <script>
 function overlap_c() {
   if(mES1_1.checked == true) {
@@ -5,6 +9,15 @@ function overlap_c() {
   }
   if(mES1_1.checked == false) {
     document.getElementById('majorEduOverlap').value = "0";
+  }
+}
+
+function overlap_5_3_c() {
+  if(mES3_1.checked == true) {
+    document.getElementById('korean5_3').value = "1";
+  }
+  if(mES3_1.checked == false) {
+    document.getElementById('korean5_3').value = "0";
   }
 }
 </script>
@@ -32,6 +45,9 @@ require_once('lib/print.php');
 
     function setParentText(){
              opener.document.getElementById("majorEdu").value = document.getElementById("total_sum").value;
+             <?php if($department == "국어교육전공") { ?>
+             opener.document.getElementById("korean5_3Check").value = document.getElementById("korean5_3").value;
+             <?php } ?>
              opener.document.getElementById("majorEduCheck").value = document.getElementById("majorEduOverlap").value;
              window.close();
         }
@@ -102,15 +118,20 @@ require_once('lib/print.php');
       <tr>
         <td height="25">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" id="popUpSubmit" value="확인" onclick=
           <?php
-          if($department == "가정교육전공" or $department == "국어교육전공" or $department == "도덕윤리교육전공" or $department == "미술교육전공" or $department == "생물교육전공" or $department == "역사교육전공" or $department == "일반사회교육전공" or $department == "일어교육전공" or $department == "지리교육전공") {
+          if($department == "가정교육전공" or $department == "도덕윤리교육전공" or $department == "미술교육전공" or $department == "생물교육전공" or $department == "역사교육전공" or $department == "일반사회교육전공" or $department == "일어교육전공" or $department == "지리교육전공") {
             if($department == "체육교육전공" or $department == "컴퓨터교육전공") {
            ?>
           "overlap_c();setParentText();"
-        <?php } } else { ?>
+        <?php } } else if($department == "국어교육전공") { ?>
+          "overlap_c();overlap_5_3_c();setParentText();"
+        <?php } else { ?>
           "setParentText()"
         <?php } ?>
         ></td>
         <input type="hidden" id="majorEduOverlap" name="majorEduOverlap" value="0">
+        <?php if($department == "국어교육전공") { ?>
+        <input type="hidden" id="korean5_3" name="korean5_3" value="0">
+        <?php } ?>
       </tr>
       <script>
       function setCheck() {
@@ -121,6 +142,18 @@ require_once('lib/print.php');
       }
       setCheck();
       </script>
+
+      <?php if($department == "국어교육전공") { ?>
+        <script type="text/javascript">
+        function setCheck2() {
+          document.getElementById("korean5_3").value = opener.document.getElementById("korean5_3Check").value;
+          if(document.getElementById("korean5_3").value == "1") {
+            document.querySelector("#area3_1").click();
+          }
+        }
+        setCheck2();
+        </script>
+      <?php } ?>
 
     </table>
     </form>

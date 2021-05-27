@@ -1,3 +1,5 @@
+  &#9657; 전공 : 개별확인<br>
+
 <?php if($_GET['departmentCheck'] == "간호학과" or $_GET['departmentCheck'] == "국어국문학과") { ?>
 
   &#9657; 기본이수과목 : <?php if($_GET['majorBasic'] >= 21 and $_GET['area_check'] == "이수완료") { ?>

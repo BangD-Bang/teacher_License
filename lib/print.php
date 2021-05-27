@@ -1,6 +1,6 @@
 <?php
 function print_title() {
-    echo "KU 교원자격증 취득요건 자가검진";
+    echo "KU 교원자격증 취득요건 자가검정";
 }
 
 function print_institution() {

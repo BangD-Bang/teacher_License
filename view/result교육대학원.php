@@ -1,3 +1,5 @@
+  &#9657; 전공 : 졸업요건 충족 시 충족<br>
+
 <?php if($_GET['departmentCheck'] == "가정교육전공" || $_GET['departmentCheck'] == "국어교육전공" || $_GET['departmentCheck'] == "도덕윤리교육전공" || $_GET['departmentCheck'] == "역사교육전공" || $_GET['departmentCheck'] == "컴퓨터교육전공") { ?>
 
   &#9657; 기본이수과목 : <?php if($_GET['majorBasic'] >= 14 and $_GET['area_check'] == "이수완료") { ?>
